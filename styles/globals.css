@@ -1,16 +1,93 @@
-html,
+html body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-image: linear-gradient(to bottom right, gray, black);
+    backdrop-filter: blur(100px);
+    background-size: 100% 100%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+#root {
+    height: 100%;
+    width:100%;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-* {
-  box-sizing: border-box;
+#root::-webkit-scrollbar {
+    display: none;
+}
+
+.Toastify__toast--default {
+    backdrop-filter: blur(10px);
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000 !important;
+    opacity: 0.8;
+    text-align: center;
+}
+
+button:focus {
+    outline: none;
+    shadow: 5px 5px black;
+}
+
+/* ------------------------- */
+/* emoji-picker react styles */
+/* ------------------------- */
+aside.emoji-picker-react {
+    width: auto !important;
+    height: 90% !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+    margin: 10px !important;
+}
+
+.emoji-picker-react .emoji-group:before { 
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    padding: 0 10px !important;
+    border-radius: 5px !important;
+}
+
+aside.emoji-picker-react .content-wrapper::before {
+    margin-right: 10px !important;
+}
+
+  
+/* SongInfo */
+.textWrapper * {
+    white-space: nowrap;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.textWrapper *::-webkit-scrollbar {
+    display: none;
+}
+
+/* Player */
+.h_iframe iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border-radius: .5rem;
+}
+
+/* PlayerControls */
+.controlWrapper button {
+    display: block;
+    position: absolute;
+    text-align: center;
+    font-size: 35px;
+    background-color: transparent;
+    border: none;
 }

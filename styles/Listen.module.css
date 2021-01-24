@@ -1,0 +1,186 @@
+/* PlayerConrols */
+.controlWrapper {
+    width: 60%;
+    height: 29%;
+    position: relative;
+    margin-top: .3rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.selectedEmoji {
+    font-size: 70px;
+    text-align: center;
+    margin: 0;
+}
+
+.emojiWrapper {
+    display: inline-block;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.returnHome {
+    position: fixed;
+    left: 1rem;
+    bottom: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+
+.addSong {
+    position: fixed;
+    right: 1rem;
+    bottom: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+
+.modal-content {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.modal-title {
+    color:white;
+}
+
+.controlWrapper button.north {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.controlWrapper button.south {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.controlWrapper button.east {
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.controlWrapper button.west {
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+/* Player */
+.h_iframe {
+    position:relative;
+    height: 48%;
+    margin-top: calc(var(--bs-gutter-x)/ 2);
+}
+  
+/* animations */
+  
+.player-north {
+    animation-duration: .5s;
+    animation-name: slide-north;
+}
+  
+@keyframes slide-north {
+    50% {
+      margin-top: 100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-top: -100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-top: 0%;
+    }
+}
+  
+  
+  
+.player-south {
+    animation-duration: .5s;
+    animation-name: slide-south;  
+}
+  
+@keyframes slide-south {
+    50% {
+      margin-top: -100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-top: 100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-top: 0%;
+    }
+}
+  
+.player-east {
+    animation-duration: .5s;
+    animation-name: slide-east;
+}
+  
+@keyframes slide-east {
+    50% {
+      margin-left: -100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-left: 100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-left: 0%;
+    }
+}
+  
+.player-west {
+    animation-duration: .5s;
+    animation-name: slide-west;
+}
+  
+@keyframes slide-west {
+    50% {
+      margin-left: 100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-left: -100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-left: 0%;
+    }
+}
+
+/* SongInfo */
+.infoWrapper  {
+    padding: 1rem;
+    margin-top: .5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
+    color: white;
+    max-height: 19%;
+    border-radius: .5rem;
+}
+
+.textWrapper {
+    width: 100%;
+    display: inline-block;
+}

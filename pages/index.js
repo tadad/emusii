@@ -1,65 +1,57 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link';
+import Container from './components/Container';
+import KoodosLink from './components/KoodosLink';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+   return (
+    <Container>
+      <img src={`/emusii_logo.png`} alt="emusii" className={styles.logo} />
+      <h1 className={styles.homeEmojis}>🤯😘🥳😱😜</h1>
+      <div className={styles.instructions} style={{ 'width':'100%' }}>
+        <div className={styles.block}>
+          <p style={{'marginBottom': '0'}}>Explore music using</p>
+          <p>💫 emojis 💫</p>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+        <div className={styles.block}>
+          <h1 className="homeEmojis">👇👇👇</h1>
+        </div>
+
+        <div className={styles.block}>
+          <p style={{'marginBottom': '0'}}>in emusii,</p>
+          <p>every song has an emoji 🤭</p>
+        </div>
+
+        <div className={styles.block}>
+          <p style={{'marginBottom': '0'}}>normal playlists have two options:</p>
+          <p>⏮ back and forth ⏭</p>
+          <p style={{'fontSize': '70px'}}>🙄🥱😪</p>
+        </div>
+
+        <div className={styles.block}>
+          <p>but our songs have </p>
+          <div className={styles.directionWrapper}>
+            <p className={styles.center}>4️⃣</p>
+            <p className={styles.up}>⬆️</p>
+            <p className={styles.down}>⬇️</p>
+            <p className={styles.left}>⬅️</p>
+            <p className={styles.right}>➡️</p>
+          </div>
+          <p>neighbors</p>
+          <p style={{'fontSize': '70px'}}>🤩🥳🥰</p>
+        </div>
+        <div className={styles.block}>
+          <p>just tap ☝️ a neighboring emoji 🤪 to pick the next song 🔊</p>
+        </div>
+        <div className={styles.block}>
+          <p>🎧 Ready to start 🎵listening🎵?</p>
+        </div>
+        <Link href="/select">
+          <button type="button" className={styles.startButton}>pick an emoji</button>
+        </Link>
+        <KoodosLink />
+      </div>
+    </Container>
   )
 }
