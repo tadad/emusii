@@ -5,7 +5,6 @@ import KoodosLink from "./components/KoodosLink";
 import { AppContext } from "./context/AppContext";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export default function Select() {
   const { queryEmoji } = useContext(AppContext);
 

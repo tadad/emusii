@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React, { useContext } from "react";
 import Link from "next/link";
 import { AppContext } from "../context/AppContext";

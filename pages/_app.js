@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <main>
         <Row>
-          <Col lg={{span: 6, offset: 3}} className="mainCol">
+          <Col lg={{ span: 6, offset: 3 }} className="mainCol">
             <div className="mainContent">
               <AppProvider router={router}>
                 <>

@@ -30,8 +30,9 @@ class AppProvider extends React.Component {
     this.router = props.router;
   }
 
-  contextHandleSubmit = (values, callback) => {
+  contextHandleSubmit = (values) => {
     // axios.post('/api/user_submissions/', values);
+    console.log(values);
     this.router.push('/select');
     callback();
   }
