@@ -1,11 +1,10 @@
 import Link from 'next/link';
-import Container from './components/Container';
 import KoodosLink from './components/KoodosLink';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
    return (
-    <Container>
+    <>
       <img src={`/emusii_logo.png`} alt="emusii" className={styles.logo} />
       <h1 className={styles.homeEmojis}>🤯😘🥳😱😜</h1>
       <div className={styles.instructions} style={{ 'width':'100%' }}>
@@ -52,6 +51,6 @@ export default function Home() {
         </Link>
         <KoodosLink />
       </div>
-    </Container>
+    </>
   )
 }

@@ -1,3 +1,6 @@
+/* ---------------- */  
+/* Standard Globals */
+/* ---------------- */
 html body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -12,12 +15,27 @@ body {
     background-size: 100% 100%;
 }
 
-#root {
+.mainRow {
+    margin: 0;
+    height: 100%;
+}
+
+.mainCol {
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.mainContent {
     height: 100%;
     width:100%;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+#__next {
+    height: 100%;
 }
 
 #root::-webkit-scrollbar {
@@ -57,29 +75,6 @@ aside.emoji-picker-react {
 
 aside.emoji-picker-react .content-wrapper::before {
     margin-right: 10px !important;
-}
-
-  
-/* SongInfo */
-.textWrapper * {
-    white-space: nowrap;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.textWrapper *::-webkit-scrollbar {
-    display: none;
-}
-
-/* Player */
-.h_iframe iframe {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border-radius: .5rem;
 }
 
 /* PlayerControls */

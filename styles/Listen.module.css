@@ -80,6 +80,15 @@
     height: 48%;
     margin-top: calc(var(--bs-gutter-x)/ 2);
 }
+
+.h_iframe iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border-radius: .5rem;
+}
   
 /* animations */
   
@@ -183,4 +192,15 @@
 .textWrapper {
     width: 100%;
     display: inline-block;
+}
+
+.textWrapper * {
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.textWrapper *::-webkit-scrollbar {
+  display: none;
 }
