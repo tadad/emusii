@@ -7,6 +7,7 @@ html body {
 
 html, body {
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -15,7 +16,11 @@ body {
     background-size: 100% 100%;
 }
 
-.mainRow {
+main {
+  height: 100%;
+}
+
+.row {
     margin: 0;
     height: 100%;
 }
@@ -77,12 +82,92 @@ aside.emoji-picker-react .content-wrapper::before {
     margin-right: 10px !important;
 }
 
-/* PlayerControls */
-.controlWrapper button {
-    display: block;
-    position: absolute;
-    text-align: center;
-    font-size: 35px;
-    background-color: transparent;
-    border: none;
+/* ---------- */
+/* animations */
+/* ---------- */
+
+.player-north {
+    animation-duration: .5s;
+    animation-name: slide-north;
+}
+  
+@keyframes slide-north {
+    50% {
+      margin-top: 100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-top: -100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-top: 0%;
+    }
+}
+  
+  
+  
+.player-south {
+    animation-duration: .5s;
+    animation-name: slide-south;  
+}
+  
+@keyframes slide-south {
+    50% {
+      margin-top: -100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-top: 100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-top: 0%;
+    }
+}
+  
+.player-east {
+    animation-duration: .5s;
+    animation-name: slide-east;
+}
+  
+@keyframes slide-east {
+    50% {
+      margin-left: -100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-left: 100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-left: 0%;
+    }
+}
+  
+.player-west {
+    animation-duration: .5s;
+    animation-name: slide-west;
+}
+  
+@keyframes slide-west {
+    50% {
+      margin-left: 100%;
+      opacity: 0;
+    }
+    
+    51% {
+      margin-left: -100%;
+      opacity: 0;
+    }
+  
+    100% {
+      margin-left: 0%;
+    }
 }

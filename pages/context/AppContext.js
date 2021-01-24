@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import axios from 'axios';
 import { toast } from 'react-toastify';
+import Link from 'next/link';
 
 export const AppContext = React.createContext();
 
@@ -27,21 +28,20 @@ class AppProvider extends React.Component {
     }
   }
 
-  setButtonTapped = (val) => {
-    this.setState({buttonTapped: val});
-  }
-
   contextHandleSubmit = (values, callback) => {
     axios.post('/api/user_submissions/', values);
     callback();
   }
 
-  notify = () => toast(
-    <Link to="/add" style={{'textDecoration': 'none'}}>
-      <h3 style={{'color': 'white'}}>No song for that emoji 😢</h3>
-      <h3 style={{'color': 'rgb(71, 238, 208)', 'marginBottom': '0'}}>click here to add one</h3>
-      <h3 style={{'marginBottom': '0'}}>👁👅👁</h3>
+  notify = (emoji) => toast(
+    <Link href="/add" style={{textDecoration: 'none'}}>
+      <>
+        <h3 style={{color: 'white'}}>There are no songs for {emoji}</h3>
+        <h3 style={{color: 'rgb(71, 238, 208)', 'marginBottom': '0'}}>click here to add one</h3>
+        <h3 style={{marginBottom: '0'}}>👁👅👁</h3>
+      </>
     </Link>
+    
   );
 
   setVideoKey = (newKey, direction) => {
@@ -74,10 +74,10 @@ class AppProvider extends React.Component {
         setTimeout(() => this.setState({playerTransitionType: null}), 500); 
       }
     );
-    // history.push(`/listen/${newKey}`); // don't want to deal with deep linking for now
   }
 
   queryEmoji = (emoji) => {
+    this.notify(emoji);
     // const { history } = this.props;
     // axios.get(`/api/emoji/?title=${emoji}`)
     //   .then(res => {
@@ -147,7 +147,6 @@ class AppProvider extends React.Component {
         eastKey,
         westKey,
         playerTransitionType,
-        setButtonTapped: this.setButtonTapped,
         setVideoKey: this.setVideoKey,
         queryEmoji: this.queryEmoji,
         notify: this.notify,
@@ -162,8 +161,6 @@ class AppProvider extends React.Component {
 
 AppProvider.propTypes = {
   children: PropTypes.element.isRequired,
-  // object is not allowed as a proptype for eslint...
-  history: PropTypes.object.isRequired, // eslint-disable-line
 };
 
 export default AppProvider;
