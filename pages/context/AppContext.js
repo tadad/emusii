@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import axios from 'axios';
+import axios from 'axios';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 
@@ -29,7 +29,7 @@ class AppProvider extends React.Component {
   }
 
   contextHandleSubmit = (values, callback) => {
-    axios.post('/api/user_submissions/', values);
+    // axios.post('/api/user_submissions/', values);
     callback();
   }
 
@@ -45,28 +45,24 @@ class AppProvider extends React.Component {
   );
 
   setVideoKey = (newKey, direction) => {
-    // const { history } = this.props;
-    // axios.get(`/api/node/${newKey}`)
-    //   .then(res => {
-    //     this.setState({
-    //       selectedSongKey: res.data.song_id,
-    //       selectedTitle: res.data.title,
-    //       selectedChannel: res.data.channel,
-    //       selectedCurator: res.data.curator,
-    //       northKey: res.data.N,
-    //       southKey: res.data.S,
-    //       eastKey: res.data.E,
-    //       westKey: res.data.W,
-    //       north: res.data.N_em,
-    //       south: res.data.S_em,
-    //       east: res.data.E_em,
-    //       west: res.data.W_em,
-    //     });
-    //     axios.get(`/api/emoji/${res.data._emoji}`) // eslint-disable-line
-    //       .then(newEmoji => {
-    //         this.setState({selectedEmoji: newEmoji.data.title})
-    //       });
-    //   });
+    axios.get(`/api/node/${newKey}`)
+      .then(res => {
+        this.setState({
+          selectedEmoji: res.data.emoji,
+          selectedSongKey: newKey,
+          selectedTitle: res.data.title,
+          selectedChannel: res.data.channel,
+          selectedCurator: res.data.curator,
+          northKey: res.data.N[0],
+          southKey: res.data.S[0],
+          eastKey: res.data.E[0],
+          westKey: res.data.W[0],
+          north: res.data.N[1],
+          south: res.data.S[1],
+          east: res.data.E[1],
+          west: res.data.W[1],
+        });
+      });
 
     this.setState({
       playerTransitionType: `player-${direction}`},

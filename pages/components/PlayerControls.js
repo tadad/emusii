@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 import React, { useContext } from "react";
 import Link from "next/link";
 import { AppContext } from "../context/AppContext";
@@ -63,7 +62,6 @@ export default function PlayerControls() {
           </svg>
         </button>
       </Link>
-
       <Link href="/add">
         <button type="button" className={styles.addSong}>
           <svg

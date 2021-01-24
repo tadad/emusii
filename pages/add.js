@@ -96,7 +96,7 @@ export default function Add() {
                   />
                   <p style={{'color': 'lightgray'}}>{errors.user_emojis}</p>
                 </Form.Group>
-                <Button type="submit" id="addSubmit" disabled={isSubmitting}>
+                <Button type="submit" className={styles.startButton} disabled={isSubmitting}>
                   Submit
                 </Button>
               </Form>
