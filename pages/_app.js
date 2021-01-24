@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { Row, Col } from "react-bootstrap";
 import BackgrondImage from "./components/BackgroundImage";
 import AppProvider from "./context/AppContext";
 import "../styles/globals.css";
@@ -22,8 +23,8 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <main>
-        <div className="row">
-          <div className="col-lg-6 offset-lg-3 mainCol">
+        <Row>
+          <Col lg={{span: 6, offset: 3}} className="mainCol">
             <div className="mainContent">
               <AppProvider>
                 <>
@@ -32,8 +33,8 @@ function MyApp({ Component, pageProps }) {
                 </>
               </AppProvider>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </main>
       <footer>
         <script
