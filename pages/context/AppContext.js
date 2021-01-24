@@ -73,37 +73,15 @@ class AppProvider extends React.Component {
   }
 
   queryEmoji = (emoji) => {
-    this.notify(emoji);
-    // const { history } = this.props;
-    // axios.get(`/api/emoji/?title=${emoji}`)
-    //   .then(res => {
-    //     if (res.data.length === 0) {
-    //       this.notify();
-    //     } else {
-    //       const emojiId = res.data[0].id;
-
-    //       axios.get(`/api/node/?_emoji=${emojiId}`)
-    //         .then(res2 => {
-    //           const song = res2.data[0];
-    //           this.setState({
-    //             selectedSongKey: song.song_id,
-    //             selectedTitle: song.title,
-    //             selectedChannel: song.channel,
-    //             selectedCurator: song.curator,
-    //             selectedEmoji: emoji,
-    //             northKey: song.N,
-    //             southKey: song.S,
-    //             eastKey: song.E,
-    //             westKey: song.W,
-    //             north: song.N_em,
-    //             south: song.S_em,
-    //             east: song.E_em,
-    //             west: song.W_em,
-    //           });
-    //           history.push('/listen/');
-    //         })
-    //     }
-    //   })
+    axios.get(`/api/emoji/${emoji}`)
+      .then(res => {
+        if (res.data.length === 0) {
+          this.notify();
+        } else {
+          console.log(res);
+          this.setVideoKey(res.data)
+        }
+      })
   }
 
   render() {
