@@ -1,14 +1,14 @@
-import { useContext } from 'react';
-import YouTube from 'react-youtube';
-import { AppContext } from '../context/AppContext';
-import styles from '../../styles/Listen.module.css';
+import React, { useContext } from "react";
+import YouTube from "react-youtube";
+import { AppContext } from "../context/AppContext";
+import styles from "../../styles/Listen.module.css";
 
 export default function Player() {
   const { selectedSongKey, playerTransitionType } = useContext(AppContext);
 
   const opts = {
-    height: '400',
-    width: '400',
+    height: "400",
+    width: "400",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,

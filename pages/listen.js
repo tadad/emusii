@@ -1,6 +1,7 @@
-import Player from './components/Player';
-import SongInfo from './components/SongInfo';
-import PlayerControls from './components/PlayerControls';
+import React from "react";
+import Player from "./components/Player";
+import SongInfo from "./components/SongInfo";
+import PlayerControls from "./components/PlayerControls";
 
 export default function Grid() {
   return (
