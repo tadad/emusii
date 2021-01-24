@@ -6,7 +6,7 @@ export default function KoodosLink() {
     <p className={styles.koodosLink}>
       from the&nbsp;
       <a
-        href="https://kcollective.substack.com/"
+        href="https://koodos.com/"
         rel="noreferrer"
         target="_blank"
         style={{ color: "rgb(71, 238, 208)", textDecoration: "none" }}

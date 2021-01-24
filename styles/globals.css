@@ -55,6 +55,10 @@ main {
     text-align: center;
 }
 
+.Toastify__toast-container {
+   position: relative !important;
+}
+
 button:focus {
     outline: none;
     shadow: 5px 5px black;

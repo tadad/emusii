@@ -26,22 +26,24 @@ class AppProvider extends React.Component {
       westKey: 'yqem6k_3pZ8',
       playerTransitionType: '',
     }
+
+    this.router = props.router;
   }
 
   contextHandleSubmit = (values, callback) => {
     // axios.post('/api/user_submissions/', values);
+    this.router.push('/select');
     callback();
   }
 
-  notify = (emoji) => toast(
-    <Link href="/add" style={{textDecoration: 'none'}}>
+  notify = () => toast(
       <>
-        <h3 style={{color: 'white'}}>There are no songs for {emoji}</h3>
-        <h3 style={{color: 'rgb(71, 238, 208)', 'marginBottom': '0'}}>click here to add one</h3>
-        <h3 style={{marginBottom: '0'}}>👁👅👁</h3>
+        <h3 style={{color: 'white'}}>There are no songs for that emoji</h3>
+        <Link href="/add" style={{textDecoration: 'none'}}>
+          <h3 style={{color: 'rgb(71, 238, 208)', 'marginBottom': '0'}}>click here to add one</h3>
+        </Link>
+          <h3 style={{marginBottom: '0'}}>👁👅👁</h3>
       </>
-    </Link>
-    
   );
 
   setVideoKey = (newKey, direction) => {
@@ -79,7 +81,7 @@ class AppProvider extends React.Component {
           this.notify();
         } else {
           console.log(res);
-          this.setVideoKey(res.data)
+          this.setVideoKey(res.data);
         }
       })
   }

@@ -1,11 +1,14 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Row, Col } from "react-bootstrap";
 import BackgrondImage from "./components/BackgroundImage";
 import AppProvider from "./context/AppContext";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -26,7 +29,7 @@ function MyApp({ Component, pageProps }) {
         <Row>
           <Col lg={{span: 6, offset: 3}} className="mainCol">
             <div className="mainContent">
-              <AppProvider>
+              <AppProvider router={router}>
                 <>
                   <BackgrondImage />
                   <Component {...pageProps} />
