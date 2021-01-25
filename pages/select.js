@@ -14,7 +14,7 @@ export default function Select() {
 
   return (
     <>
-      <ToastContainer hideProgressBar autoClose={7000} />
+      <ToastContainer hideProgressBar autoClose={7000} position="top-center" />
       <Picker
         onEmojiClick={(e, emoji) => helper(e, emoji.emoji)}
         disableSearchBar

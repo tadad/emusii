@@ -34,20 +34,19 @@ class AppProvider extends React.Component {
     // axios.post('/api/user_submissions/', values);
     console.log(values);
     this.router.push('/select');
-    callback();
-  }
+  } 
 
   notify = () => toast(
       <>
         <h3 style={{color: 'white'}}>There are no songs for that emoji</h3>
-        <Link href="/add" style={{textDecoration: 'none'}}>
+        <Link href="/add" >
           <h3 style={{color: 'rgb(71, 238, 208)', 'marginBottom': '0'}}>click here to add one</h3>
         </Link>
           <h3 style={{marginBottom: '0'}}>👁👅👁</h3>
       </>
   );
 
-  setVideoKey = (newKey, direction) => {
+  setVideoKey = (newKey, direction, callback = () => {} ) => {
     axios.get(`/api/node/${newKey}`)
       .then(res => {
         this.setState({
@@ -64,7 +63,7 @@ class AppProvider extends React.Component {
           south: res.data.S[1],
           east: res.data.E[1],
           west: res.data.W[1],
-        });
+        }, callback());
       });
 
     this.setState({
@@ -81,8 +80,8 @@ class AppProvider extends React.Component {
         if (res.data.length === 0) {
           this.notify();
         } else {
-          console.log(res);
-          this.setVideoKey(res.data);
+          this.setVideoKey(res.data, null);
+          this.router.push('/listen');
         }
       })
   }

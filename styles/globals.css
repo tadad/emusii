@@ -39,15 +39,16 @@ main {
     scrollbar-width: none;
 }
 
+.mainContent::-webkit-scrollbar {
+  display: none;
+}
+
 #__next {
     height: 100%;
 }
 
-#root::-webkit-scrollbar {
-    display: none;
-}
-
 .Toastify__toast--default {
+    width: 100%;
     backdrop-filter: blur(10px);
     font-family: 'Montserrat', sans-serif;
     background-color: #000 !important;
@@ -67,13 +68,28 @@ button:focus {
 /* ------------------------- */
 /* emoji-picker react styles */
 /* ------------------------- */
-aside.emoji-picker-react {
+.emoji-picker-react {
     width: auto !important;
     height: 90% !important;
     box-shadow: none !important;
     background: transparent !important;
     border: none !important;
     margin: 10px !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+.emoji-picker-react::-webkit-scrollbar {
+  display: none;
+}
+
+.emoji-scroll-wrapper {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.emoji-scroll-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .emoji-picker-react .emoji-group:before { 
