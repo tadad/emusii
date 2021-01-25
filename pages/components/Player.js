@@ -12,6 +12,7 @@ export default function Player() {
     playerVars: {
       autoplay: 1,
       controls: 0,
+      playsinline: 1,
     },
   };
 
