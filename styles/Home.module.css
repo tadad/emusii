@@ -33,7 +33,16 @@
     background-image: linear-gradient(to right, #5B214F , #C25178);
 }
 
+.back {
+    text-align: center;
+    color: #7B7B7B;
+    margin: 1rem 0;
+}
 
+.back a {
+    color: #C25178;
+    text-decoration: none;
+}
 
 .instructions * {
     text-align: center;

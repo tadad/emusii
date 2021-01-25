@@ -31,8 +31,9 @@ class AppProvider extends React.Component {
   }
 
   contextHandleSubmit = (values) => {
-    // axios.post('/api/user_submissions/', values);
-    console.log(values);
+    global.analytics.track('added song', {
+      values,
+    })
     this.router.push('/select');
   } 
 
@@ -72,9 +73,19 @@ class AppProvider extends React.Component {
         setTimeout(() => this.setState({playerTransitionType: null}), 500); 
       }
     );
+
+    global.analytics.track('navigation', {
+      direction,
+      selectedEmoji: this.state.selectedEmoji,
+      selectedTitle: this.state.selectedTitle,
+      selectedChannel: this.state.selectedChannel,
+    });
   }
 
   queryEmoji = (emoji) => {
+    global.analytics.track('selected emoji', {
+      emoji,
+    });
     axios.get(`/api/emoji/${emoji}`)
       .then(res => {
         if (res.data.length === 0) {

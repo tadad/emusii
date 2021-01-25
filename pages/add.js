@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Link from "next/link";
 import * as Yup from "yup";
 import { Form, Button } from "react-bootstrap";
 import { Formik } from "formik";
@@ -110,6 +111,11 @@ export default function Add() {
           </Form>
         )}
       </Formik>
+      <p className={styles.back}>
+        <Link href="/select">
+        ⬅ back ⬅
+        </Link>
+      </p>
       <KoodosLink />
     </>
   );
