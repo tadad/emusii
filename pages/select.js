@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
-import Picker from "emoji-picker-react";
+import dynamic from 'next/dynamic';
 import { ToastContainer } from "react-toastify";
 import KoodosLink from "./components/KoodosLink";
 import { AppContext } from "./context/AppContext";
 import "react-toastify/dist/ReactToastify.css";
+
+const Picker = dynamic(
+  () => import("emoji-picker-react"),
+  { ssr: false }
+);
 
 export default function Select() {
   const { queryEmoji } = useContext(AppContext);
