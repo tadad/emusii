@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import Link from 'next/link';
 
 export const AppContext = React.createContext();
 
@@ -15,7 +14,8 @@ class AppProvider extends React.Component {
       selectedEmoji: '🔙',
       selectedTitle: 'Stray Kids "Back Door" M/V',
       selectedChannel: 'JYP Entertainment',
-      selectedCurator: 'TadaSlide70 🤡🥔🤠',
+      selectedCurator: 'TadaSlide70',
+      selectedCuratorEmoji: '🤡🥔🤠',
       north: '🤒',
       south: '🥪',
       east: '😭',
@@ -38,24 +38,25 @@ class AppProvider extends React.Component {
   } 
 
   notify = () => toast(
-      <>
-        <h3 style={{color: 'white'}}>There are no songs for that emoji</h3>
-        <Link href="/add" >
-          <h3 style={{color: 'rgb(71, 238, 208)', 'marginBottom': '0'}}>click here to add one</h3>
-        </Link>
-          <h3 style={{marginBottom: '0'}}>👁👅👁</h3>
-      </>
+    <a href="https://suggest.koodos.com/YVpEy1">
+      <h3 style={{color: 'white'}}>There are no songs for that emoji</h3>
+      <h3 style={{color: 'rgb(71, 238, 208)', 'marginBottom': '0'}}>tap here to add one</h3> 
+      <h3 style={{marginBottom: '0'}}>👁👅👁</h3>
+    </a>
   );
 
   setVideoKey = (newKey, direction, callback = () => {} ) => {
     axios.get(`/api/node/${newKey}`)
       .then(res => {
+        console.log(res.data.curator);
+        console.log(res.data.curator_emoji);
         this.setState({
           selectedEmoji: res.data.emoji,
           selectedSongKey: newKey,
           selectedTitle: res.data.title,
           selectedChannel: res.data.channel,
           selectedCurator: res.data.curator,
+          selectedCuratorEmoji: res.data.curator_emoji,
           northKey: res.data.N[0],
           southKey: res.data.S[0],
           eastKey: res.data.E[0],
@@ -106,6 +107,7 @@ class AppProvider extends React.Component {
       selectedTitle,
       selectedChannel,
       selectedCurator,
+      selectedCuratorEmoji,
       north,
       south,
       east,
@@ -125,6 +127,7 @@ class AppProvider extends React.Component {
         selectedTitle,
         selectedChannel,
         selectedCurator,
+        selectedCuratorEmoji,
         north,
         south,
         east,
