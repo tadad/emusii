@@ -24,6 +24,10 @@ function MyApp({ Component, pageProps }) {
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
           crossOrigin="anonymous"
         />
+        <link
+          rel="manifest"
+          href="/manifest.json"
+        />
       </Head>
       <main>
         <Row>
